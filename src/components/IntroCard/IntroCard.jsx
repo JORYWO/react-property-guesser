@@ -1,4 +1,4 @@
-import React from 'react'
+import "./introCard.css"
 
 const IntroCard = () => (
   <div className='introCard-center'>
@@ -7,7 +7,7 @@ const IntroCard = () => (
       <hr></hr>
       <h3>The Basics</h3>
       <p>
-        Guess the asking price of a house in the UK within 5 tries
+        Guess the asking price of a house in the UK within 5 tries.
         Each time you guess incorrectly you get a new clue
         <ul>
           <li>Clue 1: Additional Images</li>
@@ -18,7 +18,7 @@ const IntroCard = () => (
         <br />
         Guess Within 5% of the List Price and you win!
       </p>
-      <button>Play Game</button>
+      <button className="btn hoverEffect"><span>Play Game</span></button>
     </div>
   </div>
 )

@@ -1,0 +1,95 @@
+.introCard-center{
+  position: absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.introCard-center::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
+   url(https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.introCard-mainCard{
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50px);
+  width: 350px;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
+  /*Give slight shadow effect to card*/
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  border-left: 1px solid rgba(255,255,255,0.8);
+}
+
+.introCard-mainCard h1{
+  color: var(--dark-red);
+  letter-spacing: 2.5px;
+}
+
+.introCard-mainCard hr{
+  border: 0;
+  width: 96%;               
+  background-color:#000;
+  height: 1px;
+}
+
+.introCard-mainCard .btn{
+  position: relative;
+  width: 250px;
+  height: 50px;
+  background-color: var(--dark-red);
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  overflow: hidden;
+}
+.btn::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;   
+}
+.hoverEffect span{
+  position: relative;
+}
+
+.hoverEffect::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+.hoverEffect:hover::before {
+  transform: translate3d(100%,0,0); 
+}
+
+
+@media (max-width: 1100px) {
+  .introCard-center::before{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
+     url(https://images.pexels.com/photos/2587054/pexels-photo-2587054.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
