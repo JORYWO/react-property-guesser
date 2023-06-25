@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./introCard.css"
 
 const IntroCard = () => (
@@ -9,16 +10,18 @@ const IntroCard = () => (
       <p>
         Guess the asking price of a house in the UK within 5 tries.
         Each time you guess incorrectly you get a new clue
-        <ul>
-          <li>Clue 1: Additional Images</li>
-          <li>Clue 2: Property Subtype</li>
-          <li>Clue 3: Bedroom & Bathroom Number</li>
-          <li>Clue 4: Location on the map</li>
-        </ul>
-        <br />
-        Guess Within 5% of the List Price and you win!
       </p>
-      <button className="btn hoverEffect"><span>Play Game</span></button>
+      <ul>
+        <li>Clue 1: Additional Images</li>
+        <li>Clue 2: Property Subtype</li>
+        <li>Clue 3: Bedroom & Bathroom Number</li>
+        <li>Clue 4: Location on the map</li>
+      </ul>
+      <br />
+      <p>Guess Within 5% of the List Price and you win!</p>
+      <Link className="introCard-removeStyle" to="/game">
+        <button className="btn hoverEffect"><span>Play Game</span></button>
+      </Link>
     </div>
   </div>
 )

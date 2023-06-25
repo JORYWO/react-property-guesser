@@ -71,7 +71,6 @@
 .hoverEffect span{
   position: relative;
 }
-
 .hoverEffect::before {
   content: "";
   background: #000;
@@ -84,6 +83,10 @@
   transform: translate3d(100%,0,0); 
 }
 
+.introCard-removeStyle{
+  text-decoration: none;
+  color: inherit;
+}
 
 @media (max-width: 1100px) {
   .introCard-center::before{
