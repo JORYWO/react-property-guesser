@@ -18,7 +18,7 @@ const Game = () => {
 
   const getProperty = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/");
+      const res = await axios.get("http://localhost:8000/");
       setProperty(res.data);
       console.log(property);
     } catch (error) {

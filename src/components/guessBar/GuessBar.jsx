@@ -17,7 +17,6 @@ const GuessBar = () => {
       <label htmlFor="guessInput"></label>
       <input
         type="number"
-        inputmode="numeric"
         id="guessInput"
         value={guess}
         placeholder="Enter your Guess"
