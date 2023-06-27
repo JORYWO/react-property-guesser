@@ -23,7 +23,7 @@ const GuessBar = () => {
   };
 
   const ArrowButtonStyles = {
-    opacity: guessNum === 1 ? 0.6 : 1,
+    opacity: guessNum === 1 ? 0.4 : 1,
     cursor: guessNum === 1 ? 'default' : 'pointer'
   };
 

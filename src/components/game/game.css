@@ -8,7 +8,7 @@
 }
 
 .game-header{
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -30,10 +30,10 @@
   align-items: center;
   border: 5px solid;
   position: absolute;
-  top: 50%;
+  top: 15%;
   left: 50%;
-  transform: translate(-50%, -300px);
   padding: 10px;
+  position: sticky;
 }
 
 .game-header h1{
@@ -42,7 +42,53 @@
   letter-spacing: 1px;
 }
 
-.game-header div{
-  font-size: 20px;
-  font-weight: 100;
+.game-zoomText{
+  background-color: var(--dark-red);
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-cluesText{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 140px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+/* popup */
+.game-header h3{
+  cursor: pointer;
+}
+
+.game-overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+.game-overlay img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  zoom: 200%;
+}
+
+.game-popup ul li{
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 600;
 }
