@@ -6,7 +6,7 @@ import axios from "axios"
 import "./Game.css"
 
 const Game = () => {
-  const { property, setProperty, guesses, imageIndex } = usePropertyData()
+  const { property, setProperty, guessNum, imageIndex } = usePropertyData()
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const Game = () => {
     ) : (
       <div className="game-background">
         <div className="game-header">
-          <h1>Guess {guesses}</h1>
+          <h1>Guess {guessNum}</h1>
           <h3>Info</h3>
         </div>
         <div className="game-center">

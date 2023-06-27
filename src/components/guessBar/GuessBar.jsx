@@ -3,17 +3,29 @@ import { usePropertyData } from "../../PropertyContext";
 import "./guessBar.css"
 
 const GuessBar = () => {
-  const { setGuesses, handleCurrentImage} = usePropertyData()
-  const [guess, setGuess] = useState("");
+  const { property, guessNum, setGuessNum, handleCurrentImage} = usePropertyData()
+  const [priceGuess, setPriceGuess] = useState("")
 
   const handleInputChange = (e) => {
-    setGuess(e.target.value);
+    setPriceGuess(e.target.value);
   };
 
   const handleGuessClick = () => {
-    console.log(`Guess submitted: ${guess}`);
+    // Guess inbetween 5% of the Property Price
+    const percentageLeeway = 5
+    if (priceGuess >= property.price.amount * (1 - percentageLeeway/100) && 
+        priceGuess <= property.price.amount * (1 + percentageLeeway/100)){
+      console.log("won")
+    }
+    else{
+      setGuessNum(prevNum => prevNum + 1)
+    }
   };
 
+  const ArrowButtonStyles = {
+    opacity: guessNum === 1 ? 0.6 : 1,
+    cursor: guessNum === 1 ? 'default' : 'pointer'
+  };
 
   return (
     <div className='guessBar-center'>
@@ -21,14 +33,22 @@ const GuessBar = () => {
       <input
         type="number"
         id="guessInput"
-        value={guess}
+        value={priceGuess}
         placeholder="Enter your Guess"
         onChange={handleInputChange}
       />
       <div className='guessBar-btns'>
-        <button onClick={() => handleCurrentImage(-1)}><>&larr;</></button>
+        <button 
+          style={ArrowButtonStyles}
+          onClick={() => handleCurrentImage(-1)}>
+          <>&larr;</>
+        </button>
         <button onClick={handleGuessClick}>Guess</button> 
-        <button onClick={() => handleCurrentImage(1)}><>&rarr;</></button>
+        <button 
+          style={ArrowButtonStyles}
+          onClick={() => handleCurrentImage(1)}>
+          <>&rarr;</>
+        </button>
       </div>
     </div>
   );
