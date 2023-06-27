@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { usePropertyData } from "../../PropertyContext";
 import "./guessBar.css"
 
 const GuessBar = () => {
+  const { setGuesses, handleCurrentImage} = usePropertyData()
   const [guess, setGuess] = useState("");
 
   const handleInputChange = (e) => {
@@ -11,6 +13,7 @@ const GuessBar = () => {
   const handleGuessClick = () => {
     console.log(`Guess submitted: ${guess}`);
   };
+
 
   return (
     <div className='guessBar-center'>
@@ -22,7 +25,11 @@ const GuessBar = () => {
         placeholder="Enter your Guess"
         onChange={handleInputChange}
       />
-      <button onClick={handleGuessClick}>Guess</button> 
+      <div className='guessBar-btns'>
+        <button onClick={() => handleCurrentImage(-1)}><>&larr;</></button>
+        <button onClick={handleGuessClick}>Guess</button> 
+        <button onClick={() => handleCurrentImage(1)}><>&rarr;</></button>
+      </div>
     </div>
   );
 };
