@@ -40,7 +40,12 @@ const Game = () => {
   const toggleMap = () => {
     if (guessNum > 4) setMap(prevVal => !prevVal)
   }
-  
+
+  const mapStyle = {
+    opacity: guessNum > 4 ? 1 : 0.3,
+    cursor: guessNum > 4 ? "pointer" : "auto"
+  }
+
   if (isLoading) {
     return (<Spinner/>)
   }
