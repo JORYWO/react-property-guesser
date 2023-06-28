@@ -38,11 +38,16 @@ const Game = () => {
   }
 
   const toggleMap = () => {
-    setMap(prevVal => !prevVal)
+    if (guessNum > 4) setMap(prevVal => !prevVal)
   }
   
   if (isLoading) {
     return (<Spinner/>)
+  }
+
+  const mapStyles = {
+    opacity: guessNum > 4 ? 1 : 0.4,
+    cursor: guessNum > 4 ? 'pointer' : 'auto'
   }
 
   return (
@@ -52,7 +57,7 @@ const Game = () => {
       <div className="game-background">
         <div className="game-header">
           <h1>Guess {guessNum}</h1>
-          <BsMapFill style={{visibility: guessNum > 4 ? "visible" : "hidden"}} className="game-propertyMap" onClick={toggleMap}/>
+          <BsMapFill style={mapStyles} className="game-propertyMap" onClick={toggleMap}/>
         </div>
         <div className="game-center">
           <img src={property.propertyImages.images[imageIndex].srcUrl}></img>

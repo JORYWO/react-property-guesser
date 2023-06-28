@@ -5,6 +5,7 @@
   --white: #FEFAE0;
   --orange: #BC6C25;
   font-family: "Poppins", sans-serif;
+  user-select: none;
 }
 
 button{

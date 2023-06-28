@@ -4,7 +4,6 @@ import { useEffect } from "react"
 import { PropertyContext } from "./PropertyContext"
 import IntroCard from './components/introCard/IntroCard'
 import Game from './components/game/Game'
-import './App.css'
 
 function App() {
   const navigate = useNavigate()
