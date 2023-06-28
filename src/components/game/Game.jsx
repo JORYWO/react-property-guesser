@@ -40,7 +40,7 @@ const Game = () => {
 
   return (
     <>
-    {!property ? (<h1>No Property Found</h1>
+    {!property ? (<h1>No Property Found< br/>Please Refresh</h1>
     ) : (
       <div className="game-background">
         <div className="game-header">

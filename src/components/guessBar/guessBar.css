@@ -5,6 +5,9 @@
   align-items: center;
   margin-top: 30px;
   position: sticky;
+  background-color: #fff;
+  padding:  10px 30px 30px;
+  border-radius: 0 0 10px 10px;
 }
 
 .guessBar-center input{
@@ -39,8 +42,10 @@ input::-webkit-inner-spin-button {
 .guessBar-btns button:nth-child(1),
 .guessBar-btns button:nth-child(3){
   width: 45px;
+  background-color: #fff;
+  border-color: var(--dark-red);
 }
 .guessBar-btns button:nth-child(2){
-  width: 300px;
+  width: 312px;
   font-weight: 600;
 }
