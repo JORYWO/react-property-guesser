@@ -39,7 +39,7 @@ const GuessBar = () => {
   const GuessButtonStyle = {
     opacity: priceGuess === "" ? 0.4 : 1,
     cursor: priceGuess === "" ? 'default' : 'pointer',
-    backgroundColor: priceGuess === "" ? "#fff" : "rgb(83, 0, 0)"
+    backgroundColor: priceGuess === "" ? "#fff" : "#283618"
   }
 
   return (

@@ -45,7 +45,7 @@ const Game = () => {
       <div className="game-background">
         <div className="game-header">
           <h1>Guess {guessNum}</h1>
-          <h3 onClick={toggleInfoPopup}>Info</h3>
+          <BsMapFill className="game-propertyMap"/>
         </div>
         <div className="game-center">
           <img src={property.propertyImages.images[imageIndex].srcUrl}></img>

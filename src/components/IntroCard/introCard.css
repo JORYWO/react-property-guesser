@@ -39,7 +39,7 @@
 }
 
 .introCard-mainCard h1{
-  color: var(--dark-red);
+  color: var(--dark-green);
   letter-spacing: 2.5px;
 }
 
@@ -54,7 +54,7 @@
   position: relative;
   width: 250px;
   height: 50px;
-  background-color: var(--dark-red);
+  background-color: var(--dark-green);
   border: none;
   text-transform: uppercase;
   font-weight: 600;

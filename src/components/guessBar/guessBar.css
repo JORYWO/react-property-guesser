@@ -18,7 +18,7 @@
   font-size: 20px;
   font-weight: 600;
   border: 3px solid #000;
-  -moz-appearance:textfield;
+  -moz-appearance: textfield;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -35,7 +35,7 @@ input::-webkit-inner-spin-button {
 
 .guessBar-btns button{
   height: 42px;
-  background-color: var(--dark-red);
+  background-color: var(--orange);
   border-radius: 5px;
   border: solid 2px black;
 }
@@ -43,7 +43,7 @@ input::-webkit-inner-spin-button {
 .guessBar-btns button:nth-child(3){
   width: 45px;
   background-color: #fff;
-  border-color: var(--dark-red);
+  border: 3px solid var(--orange);
 }
 .guessBar-btns button:nth-child(2){
   width: 312px;

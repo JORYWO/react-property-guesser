@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300, 400, 500, 600, 700,800, 900&display=swap");
 
 * {
-  --dark-red: rgb(140, 18, 18);
+  --dark-green: #283618;
+  --white: #FEFAE0;
+  --orange: #BC6C25;
   font-family: "Poppins", sans-serif;
 }
 
