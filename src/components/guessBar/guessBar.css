@@ -42,10 +42,12 @@ input::-webkit-inner-spin-button {
 .guessBar-btns button:nth-child(1),
 .guessBar-btns button:nth-child(3){
   width: 45px;
-  background-color: #fff;
+  background-color: var(--white);
   border: 3px solid var(--orange);
 }
 .guessBar-btns button:nth-child(2){
   width: 312px;
   font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--white)
 }
