@@ -3,7 +3,7 @@ import { usePropertyData } from "../../PropertyContext";
 import "./guessBar.css"
 
 const GuessBar = () => {
-  const { property, guessNum, setGuessNum, handleCurrentImage} = usePropertyData()
+  const { property, guessNum, setGuessNum, handleCurrentImage, appendNewGuess } = usePropertyData()
   const [priceGuess, setPriceGuess] = useState("")
 
   const handleInputChange = (e) => {
@@ -27,6 +27,7 @@ const GuessBar = () => {
     }
     else{
       setGuessNum(prevNum => prevNum + 1)
+      appendNewGuess(priceGuess)
       setPriceGuess("")
     }
   };
@@ -39,7 +40,8 @@ const GuessBar = () => {
   const GuessButtonStyle = {
     opacity: priceGuess === "" ? 0.4 : 1,
     cursor: priceGuess === "" ? 'default' : 'pointer',
-    backgroundColor: priceGuess === "" ? "#fff" : "#283618"
+    backgroundColor: priceGuess === "" ? "#fff" : "#283618",
+    color: priceGuess === "" ? "#000" : ""
   }
 
   return (

@@ -3,6 +3,7 @@ import { usePropertyData } from "../../PropertyContext";
 import { BsZoomIn, BsMapFill } from "react-icons/bs";
 import Spinner from "../spinner/Spinner";
 import GuessBar from "../guessBar/GuessBar"
+import GuessDropdown from "../guessDropdown/GuessDropdown";
 import Map from "../map/Map";
 import axios from "axios"
 import "./Game.css"
@@ -41,18 +42,13 @@ const Game = () => {
     if (guessNum > 4) setMap(prevVal => !prevVal)
   }
 
-  const mapStyle = {
-    opacity: guessNum > 4 ? 1 : 0.3,
-    cursor: guessNum > 4 ? "pointer" : "auto"
+  const mapStyles = {
+    opacity: guessNum > 4 ? 1 : 0.4,
+    cursor: guessNum > 4 ? 'pointer' : 'auto'
   }
 
   if (isLoading) {
     return (<Spinner/>)
-  }
-
-  const mapStyles = {
-    opacity: guessNum > 4 ? 1 : 0.4,
-    cursor: guessNum > 4 ? 'pointer' : 'auto'
   }
 
   return (
@@ -71,6 +67,7 @@ const Game = () => {
             <p style={{visibility: guessNum > 2 ? "visible" : "hidden"}}>Property Subtype: < br/>{property.propertySubType}</p>
             <p style={{visibility: guessNum > 3 ? "visible" : "hidden"}}>Number Of Bedrooms: {property.bedrooms}<br />Number Of Bathrooms: {property.bathrooms}</p>
           </div>
+          <GuessDropdown />
           <GuessBar />
         </div>
         {popup && (

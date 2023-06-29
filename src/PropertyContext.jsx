@@ -10,6 +10,7 @@ export function PropertyContext({ children }){
   const [property, setProperty] = useState([])
   const [guessNum, setGuessNum] = useState(1)
   const [imageIndex, setImageIndex] = useState(0)
+  const [guessList, setGuessList] = useState([])
 
   const handleCurrentImage = (direction) => {
     // Shouldnt be able to go through images on first try; Clue 1 is additional images
@@ -19,8 +20,12 @@ export function PropertyContext({ children }){
      % property.propertyImages.images.length)
   }
 
+  const appendNewGuess = (newGuess) => {
+    setGuessList(prevArray => [...prevArray, newGuess])
+  }
+
   return (
-    <PropertyDataContext.Provider value={{ property, setProperty, guessNum, setGuessNum, imageIndex, handleCurrentImage }}>
+    <PropertyDataContext.Provider value={{ property, setProperty, guessNum, setGuessNum, imageIndex, handleCurrentImage, guessList, appendNewGuess }}>
       {children}
     </PropertyDataContext.Provider>
   )
