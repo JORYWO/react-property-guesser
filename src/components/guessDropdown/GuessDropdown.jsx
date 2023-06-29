@@ -10,14 +10,21 @@ const GuessDropdown = () => {
     if (guessList.length > 0) setUserGuess(prevVal => !prevVal)
   }
   
+  const userPriceGreater = (price) => {
+    return price > property.price.amount
+  }
+
   const userGuessesArray = guessList.map((price, index) => (
-    <div key={index}>
-      <div>
+    <>
+    <div className="guessDropdown-item" key={index}>
+      <div className="guessDropdown-info">
         <p>Guess {index+1}</p>
         <p>£{price}</p>
       </div>
-      <div>Too {price > property.price.amount ? "High" : "Low"}</div>
+      <div className="guessDropdown-colourElement" style={{backgroundColor: userPriceGreater(price) ? "#981E04" : "	#6AC506"}}>Too {userPriceGreater(price) ? "High" : "Low"}</div>
     </div>
+    <br />
+    </>
   ))
 
   const ArrowButtonStyles = {

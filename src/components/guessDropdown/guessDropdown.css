@@ -28,8 +28,54 @@
   position: absolute;
   bottom: -100%;
   right: 0;
-  width: 350px;
+  width: 300px;
   background-color: var(--white);
-  border: 3px solid var(--orange);
-  padding: 10px;
+  border: 3px solid var(--dark-green);
+  padding: 20px 10px;
+}
+
+/* Guess Item */
+.guessDropdown-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  gap: 35px;
+  border: 2px solid #000;
+  background-color: #fff;
+  margin: 5px;
+}
+
+.guessDropdown-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  overflow: hidden;
+}
+.guessDropdown-info:hover{
+  overflow: visible;
+}
+
+.guessDropdown-info p{
+  margin: 0; 
+}
+
+.guessDropdown-info p:first-child{
+  letter-spacing: 1px;
+  color: var(--dark-green);
+  font-weight: 600;
+}
+
+.guessDropdown-colourElement{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+  border-radius: 30%;
+  border: 1px solid #000;
 }
