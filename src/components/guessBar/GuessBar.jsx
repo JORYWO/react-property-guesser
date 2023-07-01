@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import { useState } from 'react';
 import { usePropertyData } from "../../PropertyContext";
 import "./guessBar.css"
@@ -5,6 +6,7 @@ import "./guessBar.css"
 const GuessBar = () => {
   const { property, guessNum, setGuessNum, handleCurrentImage, appendNewGuess } = usePropertyData()
   const [priceGuess, setPriceGuess] = useState("")
+  const navigate = useNavigate()
 
   const handleInputChange = (e) => {
     // replace if 0 is at the start of the number
@@ -23,12 +25,14 @@ const GuessBar = () => {
     const percentageLeeway = 5
     if (priceGuess >= property.price.amount * (1 - percentageLeeway/100) && 
         priceGuess <= property.price.amount * (1 + percentageLeeway/100)){
-      console.log("won")
+      appendNewGuess(priceGuess)
+      navigate("/results")
     }
     else{
       setGuessNum(prevNum => prevNum + 1)
       appendNewGuess(priceGuess)
       setPriceGuess("")
+      if (guessNum === 5) navigate("/results")
     }
   };
 

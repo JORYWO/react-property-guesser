@@ -4,12 +4,13 @@ import { useEffect } from "react"
 import { PropertyContext } from "./PropertyContext"
 import IntroCard from './components/introCard/IntroCard'
 import Game from './components/game/Game'
+import Results from './components/results/Results'
 
 function App() {
   const navigate = useNavigate()
   // redirect to path "/"
   useEffect(() => {
-    if (location.pathname === "/game") navigate("/")
+    if (location.pathname === "/game" || location.pathname === "/results") navigate("/")
   }, [])
 
   return (
@@ -17,6 +18,7 @@ function App() {
     <Routes>
       <Route path="/" element={<IntroCard />} />
       <Route path="/game" element={<Game />} />
+      <Route path="/results" element={<Results />} />
     </Routes>
     </PropertyContext>
   );
