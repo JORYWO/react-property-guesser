@@ -18,10 +18,6 @@ const Game = () => {
     getProperty()
   }, [])
 
-  useEffect(() => {
-    console.log(property)
-  }, [property])
-
   const getProperty = async () => {
     try {
       const res = await axios.get("http://localhost:8000/");
