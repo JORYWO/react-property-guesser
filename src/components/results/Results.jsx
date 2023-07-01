@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { usePropertyData } from "../../PropertyContext";
+import ImageGallery from "../imageGallery/ImageGallery";
 import "./results.css"
 
 const Results = () => {
   const { property, guessNum, guessList } = usePropertyData()
+  const [imageGallery, setImageGallery] = useState(false)
   // gameState True if less than 6 tries
   const gameWon = guessNum < 6 ? true : false;
 
@@ -30,7 +33,10 @@ const Results = () => {
   }
 
   return (
-    <div className="results-center">
+    <>
+    {!imageGallery ? (
+
+      <div className="results-center">
     <div className="results-card">
       <h1>You {gameWon ?     
         <>
@@ -42,15 +48,20 @@ const Results = () => {
       <p>
         <span className="results-textStart">Your </span> 
         {gameWon ? (
-        <><span className="results-textStart">Guess: </span>£{guessList[guessList.length - 1]}</>
-        ) : (
-        <><span className="results-textStart">Best Guess: </span>£{getClosestGuess()}</>
-        )}
+          <><span className="results-textStart">Guess: </span>£{guessList[guessList.length - 1]}</>
+          ) : (
+            <><span className="results-textStart">Best Guess: </span>£{getClosestGuess()}</>
+          )}
       </p>
       <p><span className="results-textStart">{getPercentageDif()}%</span> from the exact price</p>
-      <button className="results-listingBtn" onClick={() => openListing()}>View Listing</button>
+      <button className="results-listingBtn results-btn" onClick={() => openListing()}>View Listing</button>
+      <button className="results-gallery results-btn" onClick={() => setImageGallery(true)}>View Image Gallery</button>
     </div>
   </div>
+  ) : (
+    <ImageGallery exitImageGallery={() => setImageGallery(false)}/>
+  )}
+  </>
   )
 }
 

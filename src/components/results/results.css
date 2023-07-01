@@ -18,7 +18,7 @@
   border-left: 1px solid rgba(255,255,255,0.8);
   background-color: #fff;
   text-align: center;
-  padding: 60px 20px;
+  padding: 60px 20px 40px;
   transform: translateY(-20%);
   display: flex;
   flex-direction: column;
@@ -54,12 +54,22 @@
   color: var(--orange)
 }
 
-.results-listingBtn{
-  margin-top: 50px;
-  width: 100%;
-  height: 40px;
+.results-btn{
   background-color: var(--dark-green);
   border: solid 2px #000;
   color: var(--white); 
+}
+
+.results-listingBtn{
+  margin-top: 50px;
+  width: 100%;
+  height: 45px;
   letter-spacing: 3px;
+}
+
+.results-gallery{
+  margin-top: 20px;
+  width: 180px;
+  height: 30px;
+  letter-spacing: 1px;
 }
