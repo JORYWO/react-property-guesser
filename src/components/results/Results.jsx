@@ -34,7 +34,7 @@ const Results = () => {
     <div>
       <h1>You {gameWon ?     
         <>
-          Won in <span>{guessNum}</span> Guess{guessNum === 1 ? "" : "es"}.
+          Won in <span>{guessNum - 1}</span> Guess{guessNum - 1 === 1 ? "" : "es"}.
         </> 
         : "Lost"}
       </h1>

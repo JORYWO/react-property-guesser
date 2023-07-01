@@ -14,7 +14,6 @@ const Game = () => {
   const [popup, setPopup] = useState(false)
   const [map, setMap] = useState(false)
 
-
   useEffect(() => {
     getProperty()
   }, [])
@@ -88,7 +87,5 @@ const Game = () => {
     </>
   )
 }
-  
-  
 
 export default Game

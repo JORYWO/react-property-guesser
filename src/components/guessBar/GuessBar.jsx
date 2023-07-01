@@ -26,6 +26,7 @@ const GuessBar = () => {
     if (priceGuess >= property.price.amount * (1 - percentageLeeway/100) && 
         priceGuess <= property.price.amount * (1 + percentageLeeway/100)){
       appendNewGuess(priceGuess)
+      setGuessNum(prevNum => prevNum + 1)
       navigate("/results")
     }
     else{
