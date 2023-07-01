@@ -30,23 +30,25 @@ const Results = () => {
   }
 
   return (
-    <div>
-    <div>
+    <div className="results-center">
+    <div className="results-card">
       <h1>You {gameWon ?     
         <>
-          Won in <span>{guessNum - 1}</span> Guess{guessNum - 1 === 1 ? "" : "es"}.
+          Won in <span className="results-guessNumBox">{guessNum - 1}</span> Guess{guessNum - 1 === 1 ? "" : "es"}
         </> 
         : "Lost"}
       </h1>
-      <p>List Price: £{property.price.amount}</p>
+      <p><span className="results-textStart">List Price:</span> £{property.price.amount}</p>
       <p>
-        Your {gameWon ? `Guess: £${guessList[guessList.length - 1]}` 
-        :
-        `best Guess: £${getClosestGuess()}`
-      }
+        <span className="results-textStart">Your </span> 
+        {gameWon ? (
+        <><span className="results-textStart">Guess: </span>£{guessList[guessList.length - 1]}</>
+        ) : (
+        <><span className="results-textStart">Best Guess: </span>£{getClosestGuess()}</>
+        )}
       </p>
-      <p>{getPercentageDif()}% from the exact price</p>
-      <button onClick={() => openListing()}>View Listing</button>
+      <p><span className="results-textStart">{getPercentageDif()}%</span> from the exact price</p>
+      <button className="results-listingBtn" onClick={() => openListing()}>View Listing</button>
     </div>
   </div>
   )
